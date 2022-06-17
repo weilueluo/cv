@@ -8,28 +8,37 @@ on:
       - master
 
 jobs:
-  build:
+  CompileLatexAndConvertToPNG:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+      
+      - name: Compile Xelatex
+        uses: dante-ev/latex-action@latest
+        with:
+          args: -xelatex -latexoption=-file-line-error -latexoption=-interaction=nonstopmode
+          root_file: resume.tex
+          
       - name: Install ghostscript
         run: sudo apt install ghostscript
+        
       - name: Change ImageMagick security policy
         run: |
           DQT='"' 
           SRC="rights=${DQT}none${DQT} pattern=${DQT}PDF${DQT}"
           RPL="rights=${DQT}read\|write${DQT} pattern=${DQT}PDF${DQT}"
           sudo sed -i "s/$SRC/$RPL/" /etc/ImageMagick-6/policy.xml
-      - name: Check Dir
-        run: ls
+          
       - name: Convert PDF to PNG
         run: convert -density 900 -background white -alpha off resume.pdf -quality 90 resume.png
+        
       - name: Commit PNG
         id: commit
         run: |
           git config --local user.email "action[bot]@github.com"
           git config --local user.name "github-actions[bot]"
-          git add resume.png
+          git add resume.png resume.pdf
           if [-z "$(git status --porcelain)"]; then
              echo "::set-output name=push::false"
           else
@@ -37,6 +46,7 @@ jobs:
              echo "::set-output name=push::true"
           fi
         shell: bash
+        
       - name: Push Commit
         if: steps.commit.outputs.push == 'true'
         uses: ad-m/github-push-action@master
