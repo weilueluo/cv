@@ -41,7 +41,7 @@ jobs:
       - name: Convert PDF to PNG
         run: convert -density 900 -background white -alpha off resume.pdf -quality 90 -colorspace RGB resume.png 
         
-      - name: Commit PNG
+      - name: Commit PNG and PDF
         id: commit
         run: |
           git config --local user.email "action[bot]@github.com"
