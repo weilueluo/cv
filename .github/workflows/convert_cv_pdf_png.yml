@@ -14,12 +14,15 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v2
       
-      - name: Compile Xelatex
-        uses: dante-ev/latex-action@latest
-        with:
-          args: -xelatex -latexoption=-file-line-error -latexoption=-interaction=nonstopmode
-          root_file: resume.tex
-          
+      - name: Install Xelatex
+        run: |
+          sudo apt-get install texlive
+          sudo apt-get install texlive-xetex
+          sudo apt-get install texlive-fonts-extra 
+
+      - name: Compile Resume PDF
+        run: xelatex resume.tex
+
       - name: Install ghostscript
         run: sudo apt install ghostscript
         
