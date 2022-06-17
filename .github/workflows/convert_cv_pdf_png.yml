@@ -39,7 +39,7 @@ jobs:
           sudo sed -i -E 's/name="disk" value=".+"/name="disk" value="8GiB"/g' /etc/ImageMagick-6/policy.xml
           
       - name: Convert PDF to PNG
-        run: convert -define colorspace:auto-grayscale=false -density 900 -background white -alpha off resume.pdf -quality 90 resume.png 
+        run: convert -density 900 -background white -alpha off resume.pdf -quality 90 -colorspace RGB resume.png 
         
       - name: Commit PNG
         id: commit
