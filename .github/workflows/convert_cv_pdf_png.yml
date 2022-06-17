@@ -41,15 +41,12 @@ jobs:
       - name: Convert PDF to PNG
         run: convert -density 900 -background white -alpha off resume.pdf -quality 90 -colorspace RGB resume.png 
         
-      - name: check dir
-        run: ls
-        
       - name: Commit PNG
         id: commit
         run: |
           git config --local user.email "action[bot]@github.com"
           git config --local user.name "github-actions[bot]"
-          git add resume.png resume.pdf
+          git add resume*.png resume.pdf
           if [-z "$(git status --porcelain)"]; then
              echo "::set-output name=push::false"
           else
