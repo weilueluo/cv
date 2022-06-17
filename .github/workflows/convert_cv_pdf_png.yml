@@ -41,6 +41,9 @@ jobs:
       - name: Convert PDF to PNG
         run: convert -density 900 -background white -alpha off resume.pdf -quality 90 -colorspace RGB resume.png 
         
+      - name: check dir
+        run: ls
+        
       - name: Commit PNG
         id: commit
         run: |
