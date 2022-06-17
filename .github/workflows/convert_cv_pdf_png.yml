@@ -20,8 +20,10 @@ jobs:
           SRC="rights=${DQT}none${DQT} pattern=${DQT}PDF${DQT}"
           RPL="rights=${DQT}read\|write${DQT} pattern=${DQT}PDF${DQT}"
           sudo sed -i "s/$SRC/$RPL/" /etc/ImageMagick-6/policy.xml
+      - name: Check Dir
+        run: ls
       - name: Convert PDF to PNG
-        run: convert -density 900 -background white -alpha off resume.pdf -quality 90 resume.pdf
+        run: convert -density 900 -background white -alpha off resume.pdf -quality 90 resume.png
       - name: Commit PNG
         id: commit
         run: |
