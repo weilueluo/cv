@@ -1,0 +1,42 @@
+name: PDF to PNG
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install ghostscript
+        run: sudo apt install ghostscript
+      - name: Change ImageMagick security policy
+        run: |
+          DQT='"' 
+          SRC="rights=${DQT}none${DQT} pattern=${DQT}PDF${DQT}"
+          RPL="rights=${DQT}read\|write${DQT} pattern=${DQT}PDF${DQT}"
+          sudo sed -i "s/$SRC/$RPL/" /etc/ImageMagick-6/policy.xml
+      - name: Convert PDF to PNG
+        run: convert -density 900 -background white -alpha off resume.pdf -quality 90 resume.png
+      - name: Commit PNG
+        id: commit
+        run: |
+          git config --local user.email "action[bot]@github.com"
+          git config --local user.name "github-actions[bot]"
+          git add resume.png
+          if [-z "$(git status --porcelain)"]; then
+             echo "::set-output name=push::false"
+          else
+             git commit -m "[bot] updated Twenty-Seconds-Icons_cv.png"
+             echo "::set-output name=push::true"
+          fi
+        shell: bash
+      - name: Push Commit
+        if: steps.commit.outputs.push == 'true'
+        uses: ad-m/github-push-action@master
+        with:
+           github_token: ${{ secrets.SECRET_TOKEN }}
