@@ -21,7 +21,9 @@ jobs:
           sudo apt-get install texlive-fonts-extra 
 
       - name: Compile Resume PDF
-        run: xelatex resume.tex
+        run: |
+          xelatex resume.tex
+          xelatex resumeCN.tex
 
       - name: Install ghostscript
         run: sudo apt install ghostscript
@@ -39,14 +41,16 @@ jobs:
           sudo sed -i -E 's/name="disk" value=".+"/name="disk" value="8GiB"/g' /etc/ImageMagick-6/policy.xml
           
       - name: Convert PDF to PNG
-        run: convert -density 900 -background white -alpha off resume.pdf -quality 90 -colorspace RGB resume.png 
+        run: |
+          convert -density 900 -background white -alpha off resume.pdf -quality 90 -colorspace RGB resume.png
+          convert -density 900 -background white -alpha off resumeCN.pdf -quality 90 -colorspace RGB resumeCN.png 
         
       - name: Commit PNG and PDF
         id: commit
         run: |
           git config --local user.email "action[bot]@github.com"
           git config --local user.name "github-actions[bot]"
-          git add resume*.png resume.pdf
+          git add resume*.png resume*.pdf
           if [-z "$(git status --porcelain)"]; then
              echo "::set-output name=push::false"
           else
