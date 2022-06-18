@@ -1,4 +1,4 @@
-name: PDF to PNG
+name: Compile Tex to PDF and Generate PNG
 on:
   push:
     branches:
