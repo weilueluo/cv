@@ -5,3 +5,7 @@
 ![resume-1](./resume-0.png)
 
 ![resume-2](./resume-1.png)
+
+![resume-cn-1](./resumeCN-0.png)
+
+![resume-cn-2](./resumeCN-1.png)
