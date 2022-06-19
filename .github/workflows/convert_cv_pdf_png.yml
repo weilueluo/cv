@@ -27,6 +27,7 @@ jobs:
         run: |
           xelatex resume.tex
           xelatex resumeCN.tex
+          xelatex coverletter_google.tex
 
       - name: Install ghostscript
         run: sudo apt install ghostscript
@@ -48,7 +49,7 @@ jobs:
           convert -density 900 -background white -alpha off resume.pdf -quality 90 -colorspace RGB resume.png
           convert -density 900 -background white -alpha off resumeCN.pdf -quality 90 -colorspace RGB resumeCN.png 
       
-      - name: Move PDF
+      - name: Move Resume PDF
         run: |
           mv resume*.pdf ..
 
