@@ -19,6 +19,7 @@ jobs:
       
       - name: Install Xelatex
         run: |
+          sudo apt update
           sudo apt-get install texlive
           sudo apt-get install texlive-xetex
           sudo apt-get install texlive-fonts-extra 
