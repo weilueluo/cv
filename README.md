@@ -9,3 +9,10 @@
 ![resume-cn-1](./src/resumeCN-0.png)
 
 ![resume-cn-2](./src/resumeCN-1.png)
+
+### Compliation
+> sudo apt-get update
+> sudo apt-get install texlive-xetex
+> sudo apt-get install texlive-fonts-extra
+> xelatex resume.tex
+
