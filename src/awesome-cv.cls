@@ -83,10 +83,10 @@
 % Needed to deal hyperlink
 \RequirePackage[hidelinks,unicode]{hyperref}
 \hypersetup{%
-  pdftitle={},
-  pdfauthor={},
-  pdfsubject={},
-  pdfkeywords={}
+  pdftitle={Weilue's Resume},
+  pdfauthor={Weilue Luo},
+  pdfsubject={Weilue's Resume},
+  pdfkeywords={resume, cv, software engineer, amazon}
 }
 
 
@@ -114,6 +114,8 @@
 \fancyhf{}
 % Enable if you want to make header or footer using fancyhdr
 \pagestyle{fancy}
+% disable page numbering
+\pagenumbering{gobble}
 
 
 %-------------------------------------------------------------------------------
