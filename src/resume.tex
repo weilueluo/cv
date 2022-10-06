@@ -87,8 +87,12 @@
 % \let\oldurl\url
 % \renewcommand{\url}[1]{\texttt{\oldurl{#1}}}
 
+
+\usepackage[usestackEOL]{stackengine}
+
 %-------------------------------------------------------------------------------
 \begin{document}
+
 
 % Print the header with above personal information
 % Give optional argument to change alignment(C: center, L: left, R: right)
@@ -114,6 +118,6 @@
 %\input{resume/honors.tex}
 \input{resume/projects.tex}
 
-
+%\raggedleft\vfill\itshape\Longstack[l]{hello}
 %-------------------------------------------------------------------------------
 \end{document}
