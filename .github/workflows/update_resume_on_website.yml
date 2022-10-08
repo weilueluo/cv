@@ -18,10 +18,17 @@ jobs:
         uses: actions/checkout@v2
         
         
-      - name: convert tex to html
-        uses: docker://pandoc/core:2.9
+      - name: setup pandoc
+        uses: r-lib/actions/setup-pandoc@v1
         with:
-          args: "src/resume.tex -f latex -t html -o resume.html -s"
+          pandoc-version: '2.19.2' # The pandoc version to download (if necessary) and use.
+          
+      - name: convert tex to html
+        run: pandoc ./resume.tex -f latex -t html -o resume.html -s
+      
+#         uses: docker://pandoc/core:2.9
+#         with:
+#           args: "src/resume.tex -f latex -t html -o resume.html -s"
       
 #       - name: Install Pandoc
 #         run: |
