@@ -32,7 +32,9 @@ jobs:
         with:
           source_file: 'resume.html'
           destination_repo: 'redcxx/personal-website'
+          destination_branch: 'master'
           destination_folder: 'components/cv/'
           user_email: 'github-action[bot]@gmail.com'
           user_name: 'github-action[bot]'
           commit_message: 'move file from cv to personal website'
+          
