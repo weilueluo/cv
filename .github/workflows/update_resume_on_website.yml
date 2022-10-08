@@ -21,7 +21,7 @@ jobs:
       - name: convert tex to html
         uses: docker://pandoc/core:2.9
         with:
-          args: "./resume.tex -f latex -t html -o resume.html -s"
+          args: "src/resume.tex -f latex -t html -o resume.html -s"
       
 #       - name: Install Pandoc
 #         run: |
@@ -36,7 +36,7 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.SECRET_TOKEN }}
         with:
-          source_file: 'src/resume.html'
+          source_file: 'resume.html'
           destination_repo: 'redcxx/personal-website'
           destination_branch: 'master'
           destination_folder: 'components/cv/'
