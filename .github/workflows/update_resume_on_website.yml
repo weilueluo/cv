@@ -24,7 +24,7 @@ jobs:
           pandoc-version: '2.19.2' # The pandoc version to download (if necessary) and use.
           
       - name: convert tex to html
-        run: pandoc ./resume.tex -f latex -t html -o resume.html -s
+        run: pandoc ./resume.tex -f latex -t html -o resume.html -s --title resume
       
 #         uses: docker://pandoc/core:2.9
 #         with:
@@ -43,7 +43,7 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.SECRET_TOKEN }}
         with:
-          source_file: 'resume.html'
+          source_file: 'src/resume.html'
           destination_repo: 'redcxx/personal-website'
           destination_branch: 'master'
           destination_folder: 'components/cv/'
