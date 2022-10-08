@@ -16,14 +16,20 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
+        
+        
+      - name: convert tex to html
+        uses: docker://pandoc/core:2.9
+        with:
+          args: "./resume.tex -f latex -t html -o resume.html -s"
       
-      - name: Install Pandoc
-        run: |
-          sudo apt update
-          sudo apt-get install pandoc
-      - name: Convert tex to html
-        run: |
-          pandoc ./resume.tex -f latex -t html -o resume.html --css=github-pandoc.css
+#       - name: Install Pandoc
+#         run: |
+#           sudo apt update
+#           sudo apt-get install pandoc
+#       - name: Convert tex to html
+#         run: |
+#           pandoc ./resume.tex -f latex -t html -o resume.html --css=github-pandoc.css
 
       - name: copy file to personal website
         uses: dmnemec/copy_file_to_another_repo_action@main
