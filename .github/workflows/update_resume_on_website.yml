@@ -23,7 +23,7 @@ jobs:
           sudo apt-get install pandoc
       - name: Convert tex to html
         run: |
-          pandoc ./resume.tex -f latex -t html -o resume.html --css=style.css
+          pandoc ./resume.tex -f latex -t html -o resume.html -s
 
       - name: copy file to personal website
         uses: dmnemec/copy_file_to_another_repo_action@main
