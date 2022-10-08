@@ -24,7 +24,7 @@ jobs:
           pandoc-version: '2.19.2' # The pandoc version to download (if necessary) and use.
           
       - name: convert tex to html
-        run: pandoc ./resume.tex -f latex -t html -o resume.html --title resume
+        run: pandoc resume.tex -f latex -t html -o resume.html
       
 #         uses: docker://pandoc/core:2.9
 #         with:
