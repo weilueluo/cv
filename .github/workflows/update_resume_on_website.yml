@@ -24,17 +24,13 @@ jobs:
       - name: Convert tex to html
         run: |
           pandoc ./resume.tex -f latex -t html -o resume.html
-          
-      - name: debug ls
-        run: |
-          ls -l
-     
+
       - name: copy file to personal website
-        uses: redcxx/copy_file_to_another_repo_action@main
+        uses: dmnemec/copy_file_to_another_repo_action@main
         env:
           API_TOKEN_GITHUB: ${{ secrets.SECRET_TOKEN }}
         with:
-          source_file: './resume.html'
+          source_file: 'src/resume.html'
           destination_repo: 'redcxx/personal-website'
           destination_branch: 'master'
           destination_folder: 'components/cv/'
