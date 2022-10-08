@@ -30,7 +30,7 @@ jobs:
           ls -l
      
       - name: copy file to personal website
-        uses: dmnemec/copy_file_to_another_repo_action@main
+        uses: redcxx/copy_file_to_another_repo_action@main
         env:
           API_TOKEN_GITHUB: ${{ secrets.SECRET_TOKEN }}
         with:
