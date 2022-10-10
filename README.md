@@ -2,7 +2,7 @@
 
 ## Links
 > [中文版本](https://github.com/Redcxx/cv/blob/master/resumeCN.pdf)<br />
-> [English Version](https://github.com/Redcxx/cv/blob/master/resume.pdf)
+> [English Version](https://github.com/Redcxx/cv/blob/master/resume.pdf) (usually more up-to-date) （出入以英文版为准）
 
 ## Preview
 ![resume preview](./src/resume.png)
