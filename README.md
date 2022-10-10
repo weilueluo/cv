@@ -1,11 +1,17 @@
-> [中文简历](https://github.com/Redcxx/cv/blob/master/resumeCN.pdf)
+# Weilue Luo's CV
 
-> [English CV](https://github.com/Redcxx/cv/blob/master/resume.pdf)
+## Links
+> [中文版本](https://github.com/Redcxx/cv/blob/master/resumeCN.pdf)<br />
+> [English Version](https://github.com/Redcxx/cv/blob/master/resume.pdf)
 
-![resume-1](./src/resume.png)
+## Preview
+![resume preview](./src/resume.png)
 
-### Compliation
+## Compliation
 ```bash
+git clone https://github.com/Redcxx/cv.git
+cd cv/src
+
 sudo apt-get update
 sudo apt-get install texlive-xetex
 sudo apt-get install texlive-fonts-extra
@@ -13,3 +19,5 @@ sudo apt-get install texlive-fonts-extra
 xelatex resume.tex
 ```
 
+## Contributing
+Feel free to open an issue for suggestion :D
