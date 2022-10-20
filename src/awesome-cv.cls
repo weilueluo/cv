@@ -623,10 +623,10 @@
   \vspace{-2.0mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
-  \begin{tabular*}{\textwidth}{L{\textwidth - 4.5cm} R{4.5cm}}
+  \begin{tabular*}{\textwidth}{L{\textwidth - 6cm} R{6cm}}
     \ifempty{#2#3}
       {\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
-      {\entrytitlestyle{#2} & \entrypositionstyle{#1 & \entrydatestyle{#4} & \entrylocationstyle{#3} \\}
+      {\entrytitlestyle{#2} \entrypositionstyle{#1} & \entrylocationstyle{#3} \, \entrydatestyle{#4} \\}
       % {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
       % \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
   \end{tabular*}%
