@@ -450,7 +450,7 @@
     \ifthenelse{\equal{\@photoalign}{left}}{\raggedright\drawphoto}{}
   \end{minipage}
   \begin{minipage}[c]{\headertextwidth}
-    \vspace{2mm}
+    \vspace{0mm}
     \ifthenelse{\equal{#1}{L}}{\raggedright}{\ifthenelse{\equal{#1}{R}}{\raggedleft}{\centering}}
     \headerfirstnamestyle{\@firstname}\headerlastnamestyle{{}\acvHeaderNameDelim\@lastname}%
     \\[\acvHeaderAfterNameSkip]%
@@ -627,6 +627,7 @@
     \ifempty{#2#3}
       {\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
       {\entrytitlestyle{#2} \entrypositionstyle{#1} & \entrylocationstyle{#3} \, \entrydatestyle{#4} \\}
+      \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}
       % {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
       % \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
   \end{tabular*}%
