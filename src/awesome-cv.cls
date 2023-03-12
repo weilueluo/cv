@@ -147,7 +147,8 @@
 \definecolor{awesome-nephritis}{HTML}{27AE60}
 \definecolor{awesome-concrete}{HTML}{95A5A6}
 \definecolor{awesome-darknight}{HTML}{131A28}
-\colorlet{awesome-color}{awesome-skyblue}
+\definecolor{awesome-darkred}{HTML}{4f2424}
+\colorlet{awesome-color}{awesome-darkred}
 
 % Boolean value to switch section color highlighting
 \newbool{acvSectionColorHighlight}
@@ -155,7 +156,7 @@
 
 % Awesome section color
 \def\@sectioncolor#1{%
-  \ifbool{acvSectionColorHighlight}{{\color{awesome}#1}}{#1}%
+  \ifbool{acvSectionColorHighlight}{{\color{awesome-color}#1}}{#1}%
 }
 
 
@@ -190,8 +191,8 @@
 %-------------------------------------------------------------------------------
 % Configure styles for each CV elements
 % For fundamental structures
-\newcommand*{\headerfirstnamestyle}[1]{{\fontsize{26pt}{1em}\headerfont\bfseries\color{text} #1}}
-\newcommand*{\headerlastnamestyle}[1]{{\fontsize{26pt}{1em}\headerfont\bfseries\color{text} #1}}
+\newcommand*{\headerfirstnamestyle}[1]{{\fontsize{26pt}{1em}\headerfont\bfseries\color{awesome-color} #1}}
+\newcommand*{\headerlastnamestyle}[1]{{\fontsize{26pt}{1em}\headerfont\bfseries\color{awesome-color} #1}}
 \newcommand*{\headerpositionstyle}[1]{{\fontsize{7.6pt}{1em}\bodyfont\scshape\color{awesome-color} #1}}
 \newcommand*{\headeraddressstyle}[1]{{\fontsize{8pt}{1em}\headerfont\itshape\color{lighttext} #1}}
 \newcommand*{\headersocialstyle}[1]{{\fontsize{7.2pt}{1em}\headerfont\color{text} #1}}
