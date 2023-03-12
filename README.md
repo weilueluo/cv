@@ -1,7 +1,6 @@
 # Weilue Luo's CV
 
 ## Links
-> [中文版本](https://github.com/Redcxx/cv/blob/master/resumeCN.pdf)（出入以英文版为准）<br /> 
 > [English Version](https://github.com/Redcxx/cv/blob/master/resume.pdf) (usually more up-to-date) 
 
 ## Preview
