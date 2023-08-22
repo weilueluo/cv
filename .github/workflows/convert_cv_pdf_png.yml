@@ -17,18 +17,15 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v2
       
-      - name: Install Xelatex
+      - name: Install LuaLatex
         run: |
           sudo apt update
-          sudo apt-get install texlive
-          sudo apt-get install texlive-xetex
-          sudo apt-get install texlive-fonts-extra 
+          sudo apt-get install texlive-full
 
       - name: Compile Resume PDF
         run: |
-          xelatex resume.tex
-          xelatex resumeCN.tex
-          xelatex coverletter_google.tex
+          lualatex resume.tex
+          lualatex resumeCN.tex
 
       - name: Install ghostscript
         run: sudo apt install ghostscript

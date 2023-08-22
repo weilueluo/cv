@@ -21,16 +21,12 @@
 % CONFIGURATIONS
 %-------------------------------------------------------------------------------
 % A4 paper size by default, use 'letterpaper' for US letter
-\documentclass[11pt, a4paper]{awesome-cv-cn}
+\documentclass[11pt, a4paper]{awesome-cv}
 
-\usepackage{xeCJK}
-\CJKfontspec{SourceHanSansSC}[
-  Path = fonts/ ,
-  Extension = .otf ,
-  UprightFont = *-Regular ,
-  BoldFont = *-Bold
-]
-
+\usepackage{luatexja-fontspec}
+\setmainjfont{arplkaitimgb}
+\setmainjfont{fandolhei}
+% \setmainjfont{fandolkai}
 
 % Configure page margins with geometry
 \geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
@@ -68,7 +64,7 @@
 %-------------------------------------------------------------------------------
 % Available options: circle|rectangle,edge/noedge,left/right
 % \photo[rectangle,edge,right]{./profile}
-\name{罗伟略}{}
+\name{Weilue}{Luo}
 %\position{Software Architect{\enskip\cdotp\enskip}Security Expert}
 %\address{London, UK (open to relocation)}
 
@@ -96,8 +92,13 @@
 % \let\oldurl\url
 % \renewcommand{\url}[1]{\texttt{\oldurl{#1}}}
 
+
+\usepackage[usestackEOL]{stackengine}
+
 %-------------------------------------------------------------------------------
 \begin{document}
+
+
 
 % Print the header with above personal information
 % Give optional argument to change alignment(C: center, L: left, R: right)
@@ -108,21 +109,22 @@
 % Leave any of these blank if they are not needed
 \makecvfooter
   {\today}
-  {罗伟略~~~·~~~简历}
-  {\thepage}
+  {Weilue Luo~~~·~~~CV}
+  {\href{https://github.com/Redcxx/cv}{https://github.com/Redcxx/cv}}
 
 
 %-------------------------------------------------------------------------------
 %	CV/RESUME CONTENT
 %	Each section is imported separately, open each file in turn to modify content
 %-------------------------------------------------------------------------------
-% \input{resumeCN/summary.tex}
+% \input{resume/summary.tex}
 \input{resumeCN/education.tex}
-\input{resumeCN/skills.tex}
 \input{resumeCN/experience.tex}
-%\input{resume/honors.tex}
+\input{resumeCN/events.tex}
 \input{resumeCN/projects.tex}
+\input{resumeCN/skills.tex}
 
 
+%\raggedleft\vfill\itshape\Longstack[l]{hello}
 %-------------------------------------------------------------------------------
 \end{document}

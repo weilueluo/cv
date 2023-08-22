@@ -1,7 +1,6 @@
 # Weilue Luo's CV
 
 ## Links
-> [中文版本](https://github.com/Redcxx/cv/blob/master/resumeCN.pdf)（出入以英文版为准）<br /> 
 > [English Version](https://github.com/Redcxx/cv/blob/master/resume.pdf) (usually more up-to-date) 
 
 ## Preview
@@ -13,11 +12,22 @@ git clone https://github.com/Redcxx/cv.git
 cd cv/src
 
 sudo apt-get update
-sudo apt-get install texlive-xetex
+sudo apt-get install texlive-full
 sudo apt-get install texlive-fonts-extra
 
-xelatex resume.tex
+lualatex resume.tex
+```
+
+### Generating available fonts
+```
+mtxrun --script fonts --list --all >> fonts.txt
+```
+
+
+### GPT Prompts for translating to chinese
+```
+I want you to act as a an expert in latex, chinese and english, I will give you my english latex file, it may use macro/functions from another file, do not change those, instead translate the words to chinese, please remember that this a resume, your translation should written in a professional way that is appealing to recruiters
 ```
 
 ## Contributing
-Feel free to open an issue for suggestion :D
+Feel free to open an issue :D
