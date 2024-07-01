@@ -86,7 +86,7 @@
   pdftitle={Weilue's Resume},
   pdfauthor={Weilue Luo},
   pdfsubject={Weilue's Resume},
-  pdfkeywords={resume, cv, software engineer, amazon}
+  pdfkeywords={resume, cv, software engineer, amazon, cisco, java, typescript, go}
 }
 
 
