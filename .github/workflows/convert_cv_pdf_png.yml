@@ -61,7 +61,7 @@ jobs:
              echo "::set-output name=push::false"
           else
              git commit -m "[bot] updated cv pdf and images"
-             git pull
+             git pull --rebase
              echo "::set-output name=push::true"
           fi
         shell: bash
