@@ -4,7 +4,7 @@
 > [English Version](https://github.com/Redcxx/cv/blob/master/resume.pdf) (usually more up-to-date) 
 
 ## Preview
-![resume preview](./src/resume.png)
+![resume preview](./src/resume-0.png)
 
 ## Compliation
 ```bash
