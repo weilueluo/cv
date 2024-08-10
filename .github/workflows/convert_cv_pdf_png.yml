@@ -9,7 +9,7 @@ on:
 
 jobs:
   compile-tex-and-generate-png:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     defaults:
       run:
         working-directory: ./src
@@ -57,7 +57,7 @@ jobs:
           git config --local user.email "action[bot]@github.com"
           git config --local user.name "github-actions[bot]"
           git add resume*.png ../resume*.pdf
-          if [-z "$(git status --porcelain)"]; then
+          if [ "$(git status --porcelain)" == "" ]; then
              echo "::set-output name=push::false"
           else
              git commit -m "[bot] updated cv pdf and images"
