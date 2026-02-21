@@ -6,7 +6,9 @@
 ## Preview
 ![resume preview](./src/resume-0.png)
 
-## Compliation
+## Compilation
+
+### Linux / WSL2
 ```bash
 git clone https://github.com/Redcxx/cv.git
 cd cv/src
@@ -16,6 +18,24 @@ sudo apt-get install texlive-full
 sudo apt-get install texlive-fonts-extra
 
 lualatex resume.tex
+```
+
+### Windows (PowerShell)
+
+**Prerequisites:** Install [MiKTeX](https://miktex.org/download) or [TeX Live](https://tug.org/texlive/). For PNG generation, also install [ImageMagick](https://imagemagick.org/script/download.php#windows) and [Ghostscript](https://ghostscript.com/releases/gsdnld.html).
+
+```powershell
+git clone https://github.com/Redcxx/cv.git
+cd cv
+
+# Full build (PDF + PNG)
+.\src\build.ps1
+
+# PDF only (skip PNG conversion)
+.\src\build.ps1 -SkipPng
+
+# English only
+.\src\build.ps1 -EnOnly
 ```
 
 ### Generating available fonts

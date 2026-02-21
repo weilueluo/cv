@@ -47,16 +47,17 @@ jobs:
           convert -density 900 -background white -alpha off resume.pdf -quality 90 -colorspace RGB resume.png
           convert -density 900 -background white -alpha off resumeCN.pdf -quality 90 -colorspace RGB resumeCN.png 
       
-      - name: Move Resume PDF
+      - name: Copy Resume PDF to root
         run: |
-          mv resume*.pdf ..
+          cp resume.pdf ../resume.pdf
+          cp resumeCN.pdf ../resumeCN.pdf
 
       - name: Commit PNG and PDF
         id: commit
         run: |
           git config --local user.email "action[bot]@github.com"
           git config --local user.name "github-actions[bot]"
-          git add resume*.png ../resume*.pdf
+          git add resume*.png resume*.pdf ../resume*.pdf
           if [-z "$(git status --porcelain)"]; then
              echo "::set-output name=push::false"
           else
