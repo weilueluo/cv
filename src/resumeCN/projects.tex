@@ -10,6 +10,42 @@
 
 %---------------------------------------------------------
 \cventry
+{TypeScript、Next.js、Node.js、Supabase、Postgres、Vercel、Railway、Anthropic Claude} % Role
+{Aex -- 智能体执行平台与 SDK} % Event
+{英国伦敦} % Location
+{2025年 - 现在} % Date(s)
+{
+\begin{cvitems} % Description(s)
+\item {平台及已发布的 \texttt{@aexhq/sdk} 与 \texttt{@aexhq/cli} npm 包，用于运行自主智能体，支持持久化运行生命周期、输出捕获和基于策略的清理。Monorepo 包含 Next.js 仪表盘（BFF/UI）、长时间运行的 worker、共享 DB/Vault/Storage 适配器，以及端到端实时测试关卡。链接：\href{https://aex.dev}{https://aex.dev}、\href{https://github.com/aexhq/aex}{https://github.com/aexhq/aex}。}
+\end{cvitems}
+}
+
+%---------------------------------------------------------
+\cventry
+{Next.js、TypeScript、Supabase (Postgres + Storage + RLS)、Anthropic Claude、MCP、Vercel} % Role
+{Brikell -- 丹麦房产 AI 尽职调查平台} % Event
+{英国伦敦} % Location
+{2025年 - 现在} % Date(s)
+{
+\begin{cvitems} % Description(s)
+\item {全栈 AI 原生平台，通过由 Claude 智能体编排的 MCP 数据源提供方（Datafordeler、Dataforsyningen、Plandata）自动化房产尽职调查。支持持久化报告生命周期、基于所有者权限的 Vault 搜索（覆盖报告和源文档证据），以及基于事实依据的只读助手。链接：\href{https://brikell.dk}{https://brikell.dk}。}
+\end{cvitems}
+}
+
+%---------------------------------------------------------
+\cventry
+{Python、FastAPI、Next.js、LanceDB（混合 BM25 + 稠密向量）、Gemini 2.5 Flash、MCP} % Role
+{B-Roll -- 纪录片历史影像搜索引擎} % Event
+{英国伦敦} % Location
+{2025年 - 现在} % Date(s)
+{
+\begin{cvitems} % Description(s)
+\item {搜索“飞轮”系统，用于缩小纪录片旁白与视觉 B-roll 之间的语义差距。将字幕解析为 15 秒窗口，使用 LLM“导演”生成视觉查询，同时运行混合本地搜索（Tantivy BM25 + text-embedding-004）和云检索，并将 VLM 生成的 500 字片段描述写回 LanceDB，使本地索引随时间持续改进。多智能体采集（Agent1）通过 MCP 提供方路由并写入紧凑源记录，供优先上下文的重排序（Agent2）使用。}
+\end{cvitems}
+}
+
+%---------------------------------------------------------
+\cventry
 {Next.js、React、TypeScript、Tailwind CSS、Three.js、Framer Motion、Vercel} % Role
 {AI 驱动的商业网站} % Event
 {英国伦敦} % Location
@@ -17,6 +53,7 @@
 {
 \begin{cvitems} % Description(s)
 \item {利用 AI 为本地公司构建生产级网站，包括一个展示超声引导穿刺手术 3D 针尖追踪技术的\href{https://beacon.lossgrad.com/}{医疗科技创业公司网站}，以及一个提供联系表单、响应式设计和邮件集成的\href{https://www.wonderlanddaynursery.co.uk/}{幼儿园网站}。}
+\item {应用 SEO 和生成式引擎优化（GEO）-- 结构化数据、语义化标记和适合 LLM 的内容呈现 -- 使客户网站能被传统搜索和 AI 助手答案发现。}
 \end{cvitems}
 }
 
@@ -58,19 +95,6 @@
 
 %---------------------------------------------------------
 \cventry
-{HTML/CSS、Typescript 和 GLSL} % Role
-{个人网站} % Event
-{英国伦敦} % Location
-{2021年9月 - 现在} % Date(s)
-{
-\begin{cvitems} % Description(s)
-\item {实现的功能：(1) 基于 AWS Lambda 部署的 \href{https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS}{CORS} 代理服务器支持的 RSS feed。(2) 使用 \href{https://github.com/features/actions}{Github Actions} 进行自动化集成。(3) 集成外部 Anime API 并构建搜索和详情页面。(4) 使用 ThreeJs 和自定义着色器构建的 3D 落地页。(5) 现代、响应式、移动友好的 CSS。(6) 搜索引擎优化。}
-\item {链接：\href{https://wll.dev}{https://wll.dev}}
-\item {项目地址：\href{https://github.com/weilueluo/personal-site}{https://github.com/weilueluo/personal-site}。}
-\end{cvitems}
-}
-
-\cventry
 {HTML/CSS 和 Javascript} % Job title
 {Collaborate Live} % Organization
 {英国曼彻斯特} % Location
@@ -105,21 +129,5 @@
 \item {实现了\href{https://www.cs.jhu.edu/~misha/Fall07/Papers/Perez03.pdf}{泊松图像编辑论文}，包括 naive filling、import \& mixing gradient、texture flattening、colour isolation \& illumination 等技术。该项目位于 \href{https://github.com/Redcxx/poisson-image-editing}{\textit{https://github.com/Redcxx/poisson-image-editing}}。}
 \end{cvitems}
 }
-
-%---------------------------------------------------------
-\cventry
-{Java} % Job title
-{MP3 音乐播放器 \& 航班管理系统} % Organization
-{英国曼彻斯特} % Location
-{2019年3月 - 2019年6月} % Date(s)
-{
-\begin{cvitems} % Description(s)
-\item {一个带有 GUI 和自定义数据库的 MP3 播放器，支持播放、暂停、重新开始和上传自定义歌曲等功能。}
-\item {一个带有 GUI 和自定义数据库的航班管理系统，支持预订、改签、取消和换乘航班等功能。}
-\item {过去5年中仅有三名学生完成了该课程作业之一。}
-\end{cvitems}
-}
-
-%---------------------------------------------------------
 
 \end{cventries}
